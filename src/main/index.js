@@ -8,6 +8,7 @@ import { createErrorWindow } from './windows-utls/error'
 import { createMainWindow } from './windows-utls/main'
 import { macOSDisableDefaultMenuItem } from './utils/Menus'
 import handleIpc from './ipc'
+import handleRobot from './robot'
 
 let mainWindow
 let errorWindow
@@ -24,6 +25,7 @@ app.on('ready', () => {
   console.error('123456')
   mainWindow = createMainWindow(mainWindow)
   handleIpc()
+  handleRobot()
 })
 
 app.on('activate', () => {
